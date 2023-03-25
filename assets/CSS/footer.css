@@ -1,10 +1,105 @@
-
-
-
 /* Footer Wrap */
-.footer-wrap{
-    background: #000;
+.footer-wrap {
+  background: #000;
 }
-.letter-content{
-    background: #263b96;
+.letter-content {
+  margin-top: 4rem !important;
+}
+
+/* Letter-content */
+
+/* Footer-Letter */
+.footer-letter {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2.5rem 4rem;
+  background: #263b96;
+}
+.footer-letter .tt-content {
+  width: 50%;
+  color: #fff;
+}
+.footer-letter .tt-content i {
+  font-size: 4rem;
+  margin-right: 1rem;
+}
+.footer-letter .tt-content p {
+  font-size: 2.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.footer-letter .email-content {
+  position: relative;
+  width: 50%;
+}
+
+.footer-letter .email-content input {
+  border-radius: 4rem;
+  width: 100%;
+  padding: 1.2rem 3rem;
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+}
+.footer-letter .email-content span {
+  position: absolute;
+  top: 50%;
+  right: 0.3rem;
+  transform: translateY(-50%);
+}
+.footer-letter .email-content span button {
+  padding: 0.8rem 4rem;
+  border-radius: 2rem;
+  border: none;
+  background: #16bcdc;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
+  font-size: 1.6rem;
+}
+.footer-letter .email-content span button:hover {
+  background: #444444;
+}
+.footer-letter .email-content span button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #fff;
+  border-radius: 2.7rem;
+  opacity: 0.1;
+  transition: 0.5s ease-in-out;
+  pointer-events: none;
+}
+.footer-letter .email-content span button:hover::after {
+  height: 100%;
+}
+
+.footer-column {
+  margin-top: 3rem;
+  color: #fff;
+  display: flex;
+}
+
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+}
+.footer-social ul li {
+  margin: 0 1rem;
+}
+
+.footer-bottom {
+  background: #000;
+}
+.footer-bottom-block {
+  padding: 3rem;
+  border-top: 4px double rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #fff;
 }
