@@ -3,18 +3,24 @@
 }
 .site-header .full-header .header-main.active {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 9999;
-  animation: fixMenu 1s ease 0s normal both 1 running;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  left: 0;
+  right: 0;
+  padding: 0;
+  animation: fixedmenu 1.5s ease 0s normal both 1 running;
 }
-@keyframes fixMenu {
+@keyframes fixedmenu {
   0% {
     top: -100%;
+    opacity: 0;
+    visibility: hidden;
   }
   100% {
-    top: 0;
+    top: 0%;
+    opacity: 1;
+    visibility: visible;
   }
 }
 .header-wrapper {

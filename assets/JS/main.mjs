@@ -31,23 +31,29 @@ btnNext.addEventListener("click", function () {
 
 // Get the button:// Event fixed-top
 const btnTop = document.querySelector("#btn-Top");
-const header_main=document.querySelector('#fixed-top')
-window.onscroll =  () => {
-   if (
+const header_main = document.querySelector("#fixed-top");
+window.onscroll = () => {
+  if (
     document.body.scrollTop > 197 ||
     document.documentElement.scrollTop > 197
   ) {
     btnTop.style.display = "block";
-        header_main.classList.add("active")
-
+    header_main.classList.add("active");
   } else {
     btnTop.style.display = "none";
-        header_main.classList.remove("active")
-
+    header_main.classList.remove("active");
+  }
+  if (
+    document.body.scrollTop > 730 ||
+    document.documentElement.scrollTop > 730
+  ) {
+    header_main.classList.add("active");
+  } else {
+    header_main.classList.remove("active");
   }
 };
 btnTop.addEventListener("click", () => {
-  window.scrollTo({top:0,behavior:'smooth'})
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 //buildProduct
@@ -55,7 +61,7 @@ const listItem = document.querySelector("#list-product");
 
 const buildItemTemplate = (item) => {
   const templateItem = document.querySelector("#itemTemplate");
-  console.log(templateItem);
+  
   const fragElement = templateItem.content.cloneNode(true);
   const itemElement = fragElement.querySelector(".owl-item");
 
@@ -80,22 +86,27 @@ const buildItemTemplate = (item) => {
 
   return itemElement;
 };
+
 const loading = document.querySelector("#loading");
 const init = async () => {
   try {
     {
       const items = await appAxios.get("/web");
+      let itemsData=items.data
       loading.style.display = "none";
       if (items) {
         let count = 0;
         items.data.forEach((item, index) => {
-          if (index >=6) {
-            return;
-          }
+          if (index >= 6) {
+              const itemElement = buildItemTemplate(item);
+              itemElement.classList.add('active')
+              console.log(itemElement);
+          }else{
           const itemElement = buildItemTemplate(item);
-
           listItem.appendChild(itemElement);
+          }
         });
+        
       }
     }
   } catch (e) {
@@ -103,3 +114,36 @@ const init = async () => {
   }
 };
 init();
+
+console.log();
+
+
+// const btnPreList = document.querySelector(".box-heading #prevItem");
+// const btnNextList = document.querySelector(".box-heading #nextItem");
+// console.log(btnPreList);
+// const listProduct = document.querySelectorAll('#list-product .owl-item');
+// console.log(listProduct[0]);
+
+// let activeIndexList = 6;
+// function changeSlideList(page) {
+//   console.log(listProduct[activeIndex-6]);
+//   listProduct[activeIndex-6].classList.remove("active");
+//    activeIndexList += page;
+
+//   if (activeIndex === -1) {
+//     activeIndexList = listProduct.length - 1;
+//   }
+//   if (activeIndex === listProduct.length) {
+//     activeIndexList = 0;
+//   }
+//   listProduct[activeIndex+6].classList.add("active");
+//   console.log(activeIndexList);
+// }
+// btnPreList.addEventListener("click", function () {
+//   console.log('object');
+//   // changeSlideList(-1);
+// });
+// btnNextList.addEventListener("click", function () {
+//   console.log('object');
+//   changeSlideList(1);
+// });
