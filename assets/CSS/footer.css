@@ -1,5 +1,19 @@
 /* Footer-Top-Content */
-
+.section-footer.active {
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.section-footer.active::after {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: "";
+  left: 0;
+  right: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
 /* Footer-Column */
 .footer-column {
   padding: 3rem 0;
@@ -32,7 +46,7 @@
   transition: all 0.5s ease-in-out 0s;
   pointer-events: none;
 }
-.owl-stage .owl-item .owl-item_img:hover::after {
+.owl-stage .owl-item:hover .owl-item_img::after {
   /* opacity: 1;
   visibility: visible; */
   width: 100%;

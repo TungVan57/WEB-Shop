@@ -44,8 +44,8 @@ window.onscroll = () => {
     header_main.classList.remove("active");
   }
   if (
-    document.body.scrollTop > 730 ||
-    document.documentElement.scrollTop > 730
+    document.body.scrollTop >= 550 ||
+    document.documentElement.scrollTop >= 550
   ) {
     header_main.classList.add("active");
   } else {
@@ -61,7 +61,7 @@ const listItem = document.querySelector("#list-product");
 
 const buildItemTemplate = (item) => {
   const templateItem = document.querySelector("#itemTemplate");
-  
+
   const fragElement = templateItem.content.cloneNode(true);
   const itemElement = fragElement.querySelector(".owl-item");
 
@@ -92,21 +92,19 @@ const init = async () => {
   try {
     {
       const items = await appAxios.get("/web");
-      let itemsData=items.data
+      let itemsData = items.data;
       loading.style.display = "none";
       if (items) {
         let count = 0;
         items.data.forEach((item, index) => {
           if (index >= 6) {
-              const itemElement = buildItemTemplate(item);
-              itemElement.classList.add('active')
-              console.log(itemElement);
-          }else{
-          const itemElement = buildItemTemplate(item);
-          listItem.appendChild(itemElement);
+            const itemElement = buildItemTemplate(item);
+            itemElement.classList.add("active");
+          } else {
+            const itemElement = buildItemTemplate(item);
+            listItem.appendChild(itemElement);
           }
         });
-        
       }
     }
   } catch (e) {
@@ -114,9 +112,6 @@ const init = async () => {
   }
 };
 init();
-
-console.log();
-
 
 // const btnPreList = document.querySelector(".box-heading #prevItem");
 // const btnNextList = document.querySelector(".box-heading #nextItem");
