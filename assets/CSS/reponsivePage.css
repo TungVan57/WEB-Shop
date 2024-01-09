@@ -1,11 +1,3 @@
-@media screen and (max-width: 1536px) {
-  .product-content .btn-wrapper .addBtn {
-    border-radius: 3rem;
-  }
-  .product-content .btn-wrapper .addBtn {
-    padding: 1.2rem 1.1rem;
-  }
-}
 @media screen and (max-width: 1280px) {
 }
 @media screen and (max-width: 1024px) {

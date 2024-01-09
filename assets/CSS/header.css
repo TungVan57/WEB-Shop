@@ -538,13 +538,26 @@
 .nav-responsive .toggle a {
   color: #666 !important;
 }
-.nav-responsive .nav-reponsive-content .toggle a i {
+.toggle .menu_toggle a i {
   font-size: 2rem;
   transition: all 0.4s ease-in-out;
 }
-.nav-responsive .toggle:hover i {
+.nav-responsive .nav-reponsive-content .toggle .toggle-mobile a i {
+  font-size: 2rem;
+}
+.nav-responsive .nav-reponsive-content .toggle .toggle-mobile a .down i {
+  font-size: 1.2rem;
+}
+.nav-responsive .nav-reponsive-content .toggle .toggle-mobile a .plus i {
+  font-size: 1.2rem;
+}
+.nav-responsive .nav-reponsive-content .toggle .toggle-mobile a .down {
+  transform: none;
+}
+.nav-responsive .toggle:hover .menu_toggle a i {
   transform: rotateY(180deg);
 }
+
 .nav-responsive .header-right a {
   color: #000 !important;
 }
@@ -667,7 +680,7 @@
   /* padding-left: 3rem; */
   position: relative;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .nav-categori .mega-menu .menu-ul li::after {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -720,7 +733,7 @@
   left: 90%;
   transition: all 0.3s ease-in-out;
 }
-.toggle .mega-menu .menu-ul li:hover .down {
+.toggle .mega-menu .menu-ul li .down {
   transform: rotate(-90deg);
 }
 .toggle .mega-menu .menu-ul li a .more {
