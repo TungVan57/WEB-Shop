@@ -20,6 +20,9 @@ function changeSlide(page) {
   }
   slides[activeIndex].classList.add("active");
 }
+setInterval(() => {
+  changeSlide(+1);
+}, 3000);
 btnPre.addEventListener("click", function () {
   changeSlide(-1);
 });
