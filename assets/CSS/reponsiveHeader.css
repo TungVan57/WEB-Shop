@@ -32,6 +32,9 @@
   .home-slider .slider-xbox .content-xbox p {
     font-size: 2.5rem;
   }
+  .site-header .full-header .header-main.active {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 992px) {
